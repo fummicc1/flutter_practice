@@ -1,28 +1,29 @@
 # Flutter
 
-- Google向けのUIツールキット
-- クロスプラットフォームに対応している
-  - モバイル
-  - ウェブ
-  - デスクトップ
-  - 組み込みデバイス
+- UI Toolkit made by Google.
+- Support cross platform
+  - iOS
+  - Android
+  - Web
+  - Desktop
+  - Embedded Device
 
 # Dart
 
-Flutterで用いられている言語
+A launguage to build a UI for Flutter.
 
 ## main()
 
-Flutterのアプリケーションで最初に実行されるメソッド
+An entrypoint of application.
 
 ## Type
 
-Dartには型があります。基本的な型を下に示します。
+Dart has a type such as `int`, `string`, `List`, `bool`, `void`.
 
-|型|説明|例|
-|---|---|---|
-|int|整数|`0`|
-|double, float|（倍精度, 単精度）浮動小数点数（64bit, 32bit）|`0.1`|
-|string|文字列|`"あ"`|
-|bool|論理型|`true`, `false`|
-|List|リスト|
+## Static Type Check
+
+Dart checks type at compile time. We cannot assign `string` value to `int` variable like the following.
+
+```swift
+string name = 0; // compile-error: static type check fails
+```

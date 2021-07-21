@@ -1,5 +1,7 @@
 # Dart Language Programming
 
+## Variable, if, for
+
 ```dart
 // 変数
 
@@ -29,5 +31,31 @@ void main() {
     count += i;
     print(count);
   }
+}
+```
+
+## Function
+
+```dart
+// 関数
+
+// 返り値 関数名() { 処理 }
+
+void printMyName(String name) {
+  print(name);
+} 
+
+// 返り値・引数ありバージョン
+double convertToDouble(int num) {
+  return num.toDouble();
+}
+
+void main() {
+  String name = "fummicc1";
+  // 関数名()で使う
+  printMyName(name);
+  int number = 10;
+  double number2 = convertToDouble(number);
+  print(number2 is double);
 }
 ```

@@ -63,3 +63,12 @@ void main() {
 ## var, final, const
 
 finalは一度しか代入できない。constはコンパイル時に値が決まる
+
+## tertiary operator（3項演算子）
+
+もしAであればAAを、そうでなければOOをという条件はif文を使わないと以下のように書ける
+
+```dart
+var text = "A";
+var newText = text == "A" ? "AA" : "OO";
+```

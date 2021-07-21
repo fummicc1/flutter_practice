@@ -59,3 +59,7 @@ void main() {
   print(number2 is double);
 }
 ```
+
+## var, final, const
+
+finalは一度しか代入できない。constはコンパイル時に値が決まる

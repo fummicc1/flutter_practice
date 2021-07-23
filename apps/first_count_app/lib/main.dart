@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,36 +25,51 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int count = 0;
+  List<int> countList = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: SafeArea(
-        child: Center(
-          child: Container(
-            child: Text(
-              "$count",
-              style: TextStyle(
-                  fontSize: 32,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
-        ),
-      ),
+      body: buildBody(),
       floatingActionButton: FloatingActionButton(
-        onPressed: plusNumber,
+        onPressed: createNewCount,
         child: Icon(Icons.add),
       ),
     );
   }
 
-  // 配列の要素を一つ増やす
-  void plusNumber() {
+  void createNewCount() {
     setState(() {
-      count += 1;
+      countList.add(0);
     });
+  }
+
+  SafeArea buildBody() {
+    return SafeArea(
+        child: ListView.builder(
+            itemCount: countList.length,
+            itemBuilder: (context, index) {
+              int count = countList[index];
+              return ListTile(
+                  title: Text(
+                    "$count",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  trailing: Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.blue,
+                    ),
+                    child: IconButton(
+                      icon: Icon(Icons.add, color: Colors.white),
+                      onPressed: () {
+                        setState(() {
+                          countList[index] += 1;
+                        });
+                      },
+                    ),
+                  ));
+            }));
   }
 }
